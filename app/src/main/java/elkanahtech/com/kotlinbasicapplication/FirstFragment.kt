@@ -23,7 +23,6 @@ class FirstFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,7 +31,7 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAddFirstFg.setOnClickListener{
-            val cVal =  binding.txtValueFirstFg.text.toString().toInt()
+            val cVal : Int =  binding.txtValueFirstFg.text.toString().toInt()
             binding.txtValueFirstFg.text = (cVal*2).toString()
         }
 

@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Switch
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
+import elkanahtech.com.kotlinbasicapplication.controls.Person
 import elkanahtech.com.kotlinbasicapplication.databinding.FragmentFirstBinding
 
 /**
@@ -32,7 +33,9 @@ class FirstFragment : Fragment() {
 
         binding.btnAddFirstFg.setOnClickListener{
             val cVal : Int =  binding.txtValueFirstFg.text.toString().toInt()
-            binding.txtValueFirstFg.text = (cVal*2).toString()
+            val nVal : Int = cVal * 2
+            binding.txtValueFirstFg.text = nVal.toString()
+            Snackbar.make(view, "Original Value is $cVal, while New value is $nVal", Snackbar.LENGTH_LONG).show()
         }
 
         binding.buttonFirst.setOnClickListener {
